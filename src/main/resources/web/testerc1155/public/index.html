@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width= device-width,user-scalable= 0,initial-scale= 1.0,minimum-scale= 1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Kios</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but store-info doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+
+  <script type="text/javascript">
+    function getUrlKey(name, url) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(url) || [, ""])[1].replace(/\+/g, '%20')) || null
+
+    }
+    let invitation_address = getUrlKey("invitation_address", location.href)
+    if (invitation_address) {
+      localStorage.setItem('invitation_address', invitation_address);
+    }
+  </script>
+</body>
+
+</html>
